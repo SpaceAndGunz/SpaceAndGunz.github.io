@@ -1,0 +1,25 @@
+{
+  "name": "spaceandgunz.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpaceAndGunz/SpaceAndGunz.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SpaceAndGunz/SpaceAndGunz.github.io/issues"
+  },
+  "homepage": "https://github.com/SpaceAndGunz/SpaceAndGunz.github.io#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
