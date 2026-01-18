@@ -49,6 +49,7 @@
     body {
       font-family: var(--sans);
       color: var(--text);
+      position: relative;
       background:
         radial-gradient(1100px 720px at 20% 18%, rgba(110,224,252,0.16), transparent 60%),
         radial-gradient(900px 680px at 75% 22%, rgba(174,64,229,0.16), transparent 62%),
@@ -58,11 +59,25 @@
       overflow-x: hidden;
     }
 
+    body::before {
+      /* Subtle noise dithers gradients to reduce HDR/Color Mangement banding in Firefox etc. */
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.5'/></svg>");
+      background-size: 180px 180px;
+      opacity: 0.035;
+      mix-blend-mode: soft-light;
+      z-index: 0;
+    }
+
     .stars {
       position: fixed;
       inset: 0;
       pointer-events: none;
       opacity: 0.35;
+      z-index: 1;
       background-image:
         radial-gradient(1px 1px at 12% 20%, rgba(242,246,255,0.8) 50%, transparent 55%),
         radial-gradient(1px 1px at 75% 12%, rgba(204,236,253,0.75) 50%, transparent 55%),
